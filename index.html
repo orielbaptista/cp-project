@@ -5,48 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>compare projects</title>
   <link href="dist/output.css" rel="stylesheet">
+  <link href="styles2.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- Header Section -->
-  <header class="text-gray-400 bg-gray-900 body-font">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <!-- Logo -->
-      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+  <header class= "bg-gray-900 body-font">
+
+      <nav class="flec justify-between items-center p-4">
+        <div class="logo">
+          <h1 class="text-lg text-white font-bold ">
+            <img class="logo-img" src="img\cplogo.png" alt="compareProjects">
+          </h1>
+        </div>
+
+      <div class="nav-items">
+
+        
+        <ul id="menulist" class="flex space-x-4"> 
+
+            <li> <a href="#" >Home</a></li>
+            <li> <a href="#" >About</a></li>
+            <li> <a href="#" >Property</a></li> 
+            <li> <a href="#" >Contact</a></li> 
+            <!-- <button id="loginbtn" class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Login -->
+       </ul>
+
+       
+
+       <button id="loginbtn" >Login
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24" >
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
-        <span class="ml-3 text-xl">Tailblocks</span>
-      </a>
-      <!-- Navigation -->
-      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a href="#home" class="mr-5 hover:text-white">Home</a>
-        <a href="#about" class="mr-5 hover:text-white">About</a>
-        <a href="#property" class="mr-5 hover:text-white">Property</a>
-        <a href="#contact" class="mr-5 hover:text-white">Contact</a>
-      </nav>
-      <!-- Button -->
-      <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
+       </button>
+
+      </div>
+
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars"  onclick="toggleMenu()"></i>
+      </div>
+      
+      <!-- <button id="loginbtn" class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Login
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
-      </button>
-    </div>
+      </button> -->
+ 
+      
+      </nav>
+
+      <script>
+        let menulist = document.getElementById("menulist");
+        menulist.style.maxHeight = "0px";
+
+        function toggleMenu(){
+          if(menulist.style.maxHeight == "0px")
+          {
+            menulist.style.maxHeight = "300px";
+          }
+        else{
+            menulist.style.maxHeight = "0px";
+            }
+        }
+
+      </script>
+
+      <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
   </header>
 
   <!-- Homepage with Search Bar -->
 <section>
-  <header id="home" class="hero">
-    <h1>Find Your Dream Home</h1>
-    <div class="search-bar">
-        <input type="text" placeholder="Search by location or property type">
-        <button>Search</button>
+  <div class="carousel">
+
+    <!-- <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 z-10 flex justify-center items-center">
+        <div class="flex flex-wrap -m-4 text-center">
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">2.7K</h2>
+            <p class="leading-relaxed">Users</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">1.8K</h2>
+            <p class="leading-relaxed">Subscribes</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">35</h2>
+            <p class="leading-relaxed">Downloads</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">4</h2>
+            <p class="leading-relaxed">Products</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+        <div class="carousel-images">
+            <img src="img\image1.jpg" alt="Image 1">
+            <img src="img\image2.jpg" alt="Image 2">
+            <img src="img\image3.jpg" alt="Image 3">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
     </div>
-  </header>
-</section>
+
+
+    <script src="jscript1.js">
+
+let currentIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-images img');
+    const totalSlides = slides.length;
+
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else {
+        currentIndex = index;
+    }
+
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}vw)`;
+}
+
+function autoSlide() {
+    currentIndex++;
+    showSlide(currentIndex);
+}
+
+// Auto-slide every 5 seconds
+setInterval(autoSlide, 5000);
+      
+
+    </script>
+</section> 
+
 
 <!-- About-->
+<section style="width: 100%; height: 100vh; background-color: #49208b;" class="about">
 
+  
+
+
+</section>
 
 
 <!-- feaatured Properties carosel-->

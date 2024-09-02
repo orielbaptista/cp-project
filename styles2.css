@@ -1,0 +1,187 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100%;
+    width: auto;
+    background: #edf2f4; 
+    
+    
+}
+
+
+nav{
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 70px;
+    z-index: 10;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Center the image vertically */
+}
+
+.logo-img {
+    height: 60px; /* Adjust based on your needs */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+nav .nav-items{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 30px;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    padding-bottom: 15px; 
+    margin: 0;
+}
+
+nav ul li{
+    text-decoration: none;
+    list-style: none; 
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav ul li a:hover{
+    color: gray;
+}
+
+nav .logo{
+    font-size: 25px;
+    font-weight: 600;
+    color: #edf2f4;
+}
+/* nav .logo:hover{
+    color: #f4f4f4;
+    font-size: 30px;
+} */
+
+ .menu-icon{
+
+    color: whitesmoke;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    
+}
+
+
+#loginbtn{
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 5%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f2937;
+    border-radius: 60px;
+    color: #edf2f4;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+
+#loginbtn:hover{
+    background-color: #374151;
+    color: #edf2f4;
+}
+
+/* #loginbtn{
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #1f2937;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+#loginbtn:hover{
+    background-color: #1f2937;
+    color: #edf2f4;
+} */
+
+@media (max-width: 700px) {
+    nav{
+        padding: 10px ;
+    }
+    nav .nav-items{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        gap: 0;
+        overflow: hidden;
+        padding: 0;
+        
+    }
+    nav ul li{
+        margin: 10px 0;
+    }
+    .menu-icon{
+        display: block;
+    }
+
+    #menulist{
+        transition: all 0.5s ease-in-out
+    }
+
+    /* #menulist.active{
+        height: 100vh;
+    } */
+
+}
+
+/* carousel */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    width: calc(100% * 3); /* Adjust the 3 to the number of images */
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Cover the area, maintain aspect ratio */
+}
+
+
