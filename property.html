@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>property</title>
+    <link href="property.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="dist/output.css" rel="stylesheet">
+</head>
+<body>
+
+     <!-- nav Section -->
+  <header class="navbar bg-gray-900 body-font">
+
+    <nav class="nav flec justify-between items-center p-4">
+      <div class="logo">
+        <h1 class="text-lg text-white font-bold ">
+          <img class="logo-img" src="img\cplogo1.png" alt="compareProjects">
+        </h1>
+      </div>
+
+    <div class="nav-items">
+
+      
+      <ul id="menulist" class="flex space-x-4"> 
+
+          <li> <a href="index.html" >Home</a></li>
+          <li> <a href="#" >About</a></li>
+          <li> <a href="property.html" class="active">Property</a></li> 
+          <li> <a href="#" >Contact</a></li> 
+     </ul>
+
+     <!-- <button id="loginbtn" >Login
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24" >
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+     </button> -->
+
+    </div>
+
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars"  onclick="toggleMenu()"></i>
+    </div>
+
+    </nav>
+
+    <script>
+      let menulist = document.getElementById("menulist");
+      menulist.style.maxHeight = "0px";
+
+      function toggleMenu(){
+        if(menulist.style.maxHeight == "0px")
+        {
+          menulist.style.maxHeight = "300px";
+        }
+      else{
+          menulist.style.maxHeight = "0px";
+          }
+      }
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</header>
+
+  <!-- Homepage with Search Bar -->
+  <section id="property_landing" class="landing-section">
+    <div class="overlay">
+        <div class="content">
+            <h1>Home/Property</h1>
+
+            <!-- Search Bar -->
+            <div class="search-bar-container">
+              <!-- City Location Section -->
+              <input type="text" id="city" placeholder="Enter city location..." class="search-input">
+              <input type="text" id="location" placeholder="Enter property location..." class="search-input">
+              <input type="text" id="search" placeholder="Search for properties..." class="search-input">
+              
+              <!-- Search Button with Icon -->
+              <button id="search-btn" class="search-btn">
+                  <img src="img/search-icon.png" alt="Search Icon" class="search-icon"> Search
+              </button>
+          </div>
+        </div>
+    </div>
+
+    
+</section>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Filter Properties</h2>
+    <form id="filter-form">
+      <div class="filter-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter location">
+      </div>
+      <div class="filter-group">
+        <label for="price-range">Price Range</label>
+        <select id="price-range" name="price-range">
+          <option value="">Select</option>
+          <option value="0-50000">$0 - $50,000</option>
+          <option value="50000-100000">$50,000 - $100,000</option>
+          <option value="100000-200000">$100,000 - $200,000</option>
+          <option value="200000+">$200,000+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="bedrooms">Bedrooms</label>
+        <select id="bedrooms" name="bedrooms">
+          <option value="">Select</option>
+          <option value="1">1 Bedroom</option>
+          <option value="2">2 Bedrooms</option>
+          <option value="3">3 Bedrooms</option>
+          <option value="4+">4+ Bedrooms</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="property-type">Property Type</label>
+        <select id="property-type" name="property-type">
+          <option value="">Select</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="villa">Villa</option>
+        </select>
+      </div>
+      <button type="button" id="apply-filters">Apply Filters</button>
+    </form>
+  </div>
+
+  <div class="property-listings">
+    <h2>Available Properties</h2>
+    <div id="properties">
+      <!-- Property cards will be injected here by JavaScript -->
+      
+
+
+      <!-- <div class="card-item" data-location="Kolkata" data-price="40000" data-bedrooms="2" data-type="apartment>
+        <a href="#" class="card-link">
+          <img src="img/house.jpg" alt="house image" class="card-image">
+          <h2 id="price" class="card-title1">₹40000</h2>
+          <h1 class="card-title">Villa</h1>
+        </a>
+         <ul class="card-details">
+          <li class="card-detail"><i class="fa-solid fa-location-dot"></i>Kolkata, Kolkata</li>
+          <li><i class="fa-solid fa-bed"></i>54 bd.</li>
+          <li><i class="fa-solid fa-bath"></i>45 ba.</li>
+          <li><i class="fa-solid fa-ruler-combined"></i>3000 Sq.</li>
+        </ul>
+      </div> -->
+
+
+      <div class="property-card" data-location="New York" data-price="75000" data-bedrooms="2" data-type="apartment">
+        <h3>Apartment in New York</h3>
+        <p>Price: $75,000 | 2 Bedrooms</p>
+      </div>
+      <div class="property-card" data-location="Los Angeles" data-price="200000" data-bedrooms="3" data-type="house">
+        <h3>House in Los Angeles</h3>
+        <p>Price: $200,000 | 3 Bedrooms</p>
+      </div>
+      <div class="property-card" data-location="Miami" data-price="120000" data-bedrooms="4" data-type="villa">
+        <h3>Villa in Miami</h3>
+        <p>Price: $120,000 | 4 Bedrooms</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+</body>
+</html>

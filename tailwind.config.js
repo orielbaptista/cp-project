@@ -8,6 +8,10 @@
 // }
 
 module.exports = {
+  corePlugins: {
+    preflight: false, // Disable Tailwind's base styles to avoid conflicts
+  },
+  prefix: 'tw-',
   content: [
     './index.html',
     './src/**/*.html',
@@ -17,4 +21,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  
 }

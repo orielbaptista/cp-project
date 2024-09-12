@@ -1,0 +1,387 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* @keyframes appear {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.overlay, .container, .row{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+} */
+
+
+html{
+  scroll-behavior: smooth;
+  
+}
+body {
+    height: 100%;
+    width: auto;
+    background-color: #f7f7f7;
+
+    
+}
+
+/* Navigation */
+nav {
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 70px;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+}
+
+nav .nav-items {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 30px;
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 15px;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: gray;
+}
+
+nav .logo {
+    font-size: 25px;
+    font-weight: 600;
+    color: #edf2f4;
+}
+
+.menu-icon {
+    color: whitesmoke;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+#loginbtn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f2937;
+    border-radius: 60px;
+    color: #edf2f4;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+#loginbtn:hover {
+    background-color: #374151;
+    color: #edf2f4;
+}
+
+@media (max-width: 700px) {
+    nav {
+        padding: 10px;
+    }
+
+    nav .nav-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        gap: 0;
+        overflow: hidden;
+        padding: 0;
+        
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        font-family: 'Open Sans';
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    #menulist {
+        transition: all 0.5s ease-in-out;
+    }
+
+  }
+
+/* ------------------------------- */
+/* Search Bar Container Styling */
+
+/* Landing Section */
+.landing-section {
+  background-image: url('img/image1.jpg'); /* Add your background image */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.landing-section .overlay {
+  position: absolute;
+
+}
+
+.landing-section .overlay .content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  z-index: 1;
+  
+}
+
+.landing-section .overlay .content h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+
+/* -----------Search Bar Styling */
+/* Search Bar Container Styling */
+.landing-section .overlay .content .search-bar-container {
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 30px;
+  box-shadow: 0 4px 8px hwb(0 0% 100% / 0.1);
+  max-width: 800px;
+  width: 100%;
+  color: #ef233c;
+  margin-top: 20px;
+}
+
+
+/* Styling the input fields */
+.landing-section .overlay .content .search-bar-container .search-input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-right: 9px;
+  flex: 1;
+  font-size: 16px;
+}
+
+.landing-section .overlay .content .search-bar-container .search-input:hover{
+  background-color: whitesmoke;
+}
+
+/* Search Button Styling */
+.search-btn {
+  background-color: #ef233c;
+  color: white ;
+  border: none;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-btn:hover {
+  background-color: #d90429;
+  
+}
+
+/* Search Icon */
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+  color: #ccc solid 3px;
+}
+
+/* ??????????????????//*/
+.search-icon img{
+  color: whitesmoke solid 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-bar-container {
+      flex-direction: column;
+  }
+
+  .landing-section .overlay .content h1 {
+    font-size: 2.5rem;
+}
+
+.landing-section .overlay .content p {
+    font-size: 1rem;
+}
+
+  .search-input {
+      margin-bottom: 10px;
+      width: 100%;
+  }
+
+  .search-btn {
+      width: 100%;
+  }
+}
+
+/*-----filter page property--------------
+--------------*/
+
+.container {
+  display: flex;
+  padding: 10%;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button#apply-filters {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button#apply-filters:hover {
+  background-color: #0056b3;
+}
+
+.property-listings {
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
+.property-listings h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.property-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.property-card p {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .property-listings {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
