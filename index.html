@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +15,13 @@
   <link href="dist/output.css" rel="stylesheet">
   
 </head>
+
 <body>
 
   
 
   <!-- nav Section -->
-  <header class="navbar bg-gray-900 body-font">
+  <header id="home" class="navbar bg-gray-900 body-font">
 
       <nav class="nav flec justify-between items-center p-4">
         <div class="logo">
@@ -33,10 +35,11 @@
         
         <ul id="menulist" class="flex space-x-4"> 
 
-            <li> <a href="index.html" >Home</a></li>
-            <li> <a href="#" >About</a></li>
+            <li> <a href="#home" >Home</a></li>
+            <li> <a href="#aabout" >About</a></li>
             <li> <a href="property.html" >Property</a></li> 
-            <li> <a href="#" >Contact</a></li> 
+            <li> <a href="#contact" >Contact</a></li> 
+            <li> <a href="compare.html" >Compare</a></li> 
        </ul>
 
        <!-- <button id="loginbtn" >Login
@@ -66,14 +69,13 @@
             menulist.style.maxHeight = "0px";
             }
         }
-
       </script>
 
-      <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+      
   </header>
 
   <!-- Homepage with Search Bar -->
-  <section id="home" class="landing-section">
+  <section class="landing-section">
     <div class="overlay">
         <div class="content">
             <h1>Find Your Dream Property</h1>
@@ -99,9 +101,29 @@
 
 
 
-  <section style="width: 100%; height: 100vh; background-color: #49208b;" class="about">
+  <section id="aabout" style="width: 100%; height: 100vh;" class="about">
+    <header class="about-header">
+      <h1>About Us</h1>
+      <p>Learn more about who we are and what we do.</p>
+    </header>
+  
+    <section class="about-section">
+      <div class="about-container">
+        <h2>Our Mission</h2>
+        <p>We are committed to providing the best real estate solutions with innovative technology that helps developers and home buyers make smarter decisions.</p>
+        
+  
+        <h2>What We Do</h2>
+        <p>We focus on delivering efficient property comparison solutions that simplify the decision-making process for developers and real estate agents. Our platform allows developers to list properties and users to compare them using AI for accurate recommendations.</p>
+      </div>
+  
+      <div class="about-image">
+        <img src="img/image1.jpg" alt="Our Team">
+      </div>
+    </section>
     
   </section>
+
   
 
 
@@ -189,39 +211,13 @@
   </div>
          <!-- -->
      <script src="script.js"></script> <!-- Link to your JavaScript file -->  
-
-     
      
 </section>
 
-<div class="row tw-mt-2 ">
-  <a href="property.html" class="btn btn-primary" >View All Properties</a>
-
-  <script src="ripple.js">
-    document.querySelector('.btn').addEventListener('click', function (e) {
-    e.preventDefault();
-  
-    // Get the button's dimensions and position
-    const rect = this.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    
-    ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
-    ripple.style.left = e.clientX - rect.left - rect.width / 2 + 'px';
-    ripple.style.top = e.clientY - rect.top - rect.height / 2 + 'px';
-  
-    ripple.classList.add('ripple');
-    
-    this.appendChild(ripple);
-  
-    setTimeout(() => {
-      ripple.remove();
-    }, 600); // Ripple duration
-  });
-
-
-  </script>
-
- </div> 
+    <div class="row tw-mt-2 ">
+       <a href="property.html" class="btn btn-primary" >View All Properties</a>
+       <script src="ripple.js"></script>
+    </div> 
 
 
  
@@ -273,53 +269,114 @@
 
 
 
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Logo -->
-    <div class="footer-logo">
-      <img src="img/cplogo1.png" alt="Company Logo" />
-    </div>
+<section id="contact">
 
-    <!-- Column Links -->
-    <div class="footer-links">
-      <div class="column">
-        <h3>Company</h3>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="column">
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#support">Support</a></li>
-        </ul>
+  <div class="container_contact">
+    <h1>Contact Us</h1>
+    <div class="contact-section">
+      <!-- Left Column: Form -->
+      <div class="form-column">
+        <h2>Send us a Message</h2>
+        <form class="sendForm" id="contactForm">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+          
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="mobile">Mobile</label>
+          <input type="tel" id="mobile" name="mobile" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          
+          <button class="sendButtom" type="submit" id="sendButton">Send</button>
+        </form>
       </div>
 
-    </div>
+      <!-- Right Column: Contact Info -->
+      <div class="info-column">
+        <h2>Contact Info</h2>
+        <p><strong>Address:</strong> Connaught Palace, New Delhi, India</p>
+        <p><strong>Email:</strong> <a href="mailto:loremipsum@dolar.sit">loremipsum@dolar.sit</a></p>
+        <p><strong>Mobile:</strong> <a href="tel:+919876543210">+91 987 654 3210</a></p>
+        
 
-    <!-- Status Bars -->
-    <div class="footer-stats">
-      <div class="stat">
-        <h4>Total Happy Clients</h4>
-        <span id="happy-clients">500+</span>
-      </div>
-      <div class="stat">
-        <h4>Total Properties</h4>
-        <span id="total-properties">200+</span>
+        <!-- Google Map Section -->
+        <div class="map-box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27996.542029913835!2d77.
+            2060!3d28.6306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3b51457b37%3A0x1
+            4c1f19f77ba588e!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1632827935201!5m2!1sen!2sin"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
       </div>
     </div>
   </div>
+
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="row">
+    <div class="col">
+      <img src="img/cplogo1.png" alt="logo" class="footer-logo">
+      <p>Skateboard +1 ksnvdl slkvdn lskdv lskdn mustache fixie paleo lumbersexual.</p>
+    </div>
+    <div class="col">
+      <h3>Office</h3>
+      <p>Lorem ipsum,</p>
+      <p>Hic nam maiores,</p>
+      <p>Mumbai, PIN 560066, India</p>
+      <!-- <p class="email-id">cpprojectes@gmail.com</p>
+      <p>+91 9876543210</p> -->
+    </div>
+    <div class="col">
+      <h3>Link</h3>
+       <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#aabout">About</a></li>
+        <li><a href="property.html">Properties</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3 class="newsletter">Newsletter</h3>
+      <form>
+        <i class=" far fa-regular fa-envelope"></i>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit"><i class="fa-solid fa-arrow-right"></i>Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      document.querySelector('form').addEventListener('submit', function(event) {
+      const emailInput = document.querySelector('input[type="email"]');
+            if (!emailInput.value) {
+            alert('Please enter your email address.');
+            event.preventDefault();
+         }
+      });
+
+  </script>
+  <!-- <hr>
+  <p class="copyright">Copyright &copy; 2022. All rights reserved.</p> -->
 </footer>
-
-
-
-
-
 
 
 </body>
 </html>
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comparepage</title>
+    <link rel="stylesheet" href="compare.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="dist/output.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar bg-gray-900 body-font">
+
+    <nav class="nav flec justify-between items-center p-4">
+      <div class="logo">
+        <h1 class="text-lg text-white font-bold ">
+          <img class="logo-img" src="img\cplogo1.png" alt="compareProjects">
+        </h1>
+      </div>
+
+    <div class="nav-items">
+
+      
+      <ul id="menulist" class="flex space-x-4"> 
+
+          <li> <a href="index.html" >Home</a></li>
+          <li> <a href="index.html#aabout" >About</a></li>
+          <li> <a href="property.html" class="active">Property</a></li> 
+          <li> <a href="index.html#contact" >Contact</a></li> 
+          <li> <a href="compare.html" >Compare</a></li> 
+     </ul>
+
+     <!-- <button id="loginbtn" >Login
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24" >
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+     </button> -->
+
+    </div>
+
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars"  onclick="toggleMenu()"></i>
+    </div>
+
+    </nav>
+
+    <script>
+      let menulist = document.getElementById("menulist");
+      menulist.style.maxHeight = "0px";
+
+      function toggleMenu(){
+        if(menulist.style.maxHeight == "0px")
+        {
+          menulist.style.maxHeight = "300px";
+        }
+      else{
+          menulist.style.maxHeight = "0px";
+          }
+      }
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</header>
+
+<section id="property_landing" class="landing-section">
+  <div class="overlay">
+      <div class="content">
+          <h1>Home/Property</h1>
+
+        
+      </div>
+  </div>
+
+  
+</section>
+
+
+    <h1>Compare Properties</h1>
+
+  
+  
+  </div id="comparison-list" class="comparison-list">
+    <!-- Properties to be compared will be displayed here -->
+  </div>
+  
+
+  <script>
+    // Function to render the comparison list on the comparison page
+function renderComparisonList() {
+  // Retrieve comparison data from localStorage
+  let compareList = JSON.parse(localStorage.getItem('compareList')) || [];
+
+  // Get the comparison list container
+  const comparisonListElement = document.getElementById('comparison-list');
+
+  // Clear the existing content
+  comparisonListElement.innerHTML = '';
+
+  // If the compare list is empty, show a message
+  if (compareList.length === 0) {
+    comparisonListElement.innerHTML = '<p>No properties selected for comparison.</p>';
+    return;
+  }
+
+  // Loop through the compareList and create property cards for each
+  compareList.forEach((property, index) => {
+    const propertyElement = document.createElement('div');
+    propertyElement.classList.add('property-item');
+
+    // Populate property details
+    propertyElement.innerHTML = `
+      <img src="${property.imgSrc}" alt="${property.location} Apartment">
+      <h2>${property.type} - $${property.price}</h2>
+      <p>Location: ${property.location}</p>
+      <p>Bedrooms: ${property.bedrooms}</p>
+      <button class="delete-btn" onclick="deleteProperty(${index})">Delete</button>
+    `;
+
+    // Append the new property element to the comparison list container
+    comparisonListElement.appendChild(propertyElement);
+  });
+}
+
+// Function to delete a property from the compare list
+function deleteProperty(index) {
+  // Get compare list from localStorage
+  let compareList = JSON.parse(localStorage.getItem('compareList')) || [];
+
+  // Remove the property at the specified index
+  compareList.splice(index, 1);
+
+  // Save updated list to localStorage
+  localStorage.setItem('compareList', JSON.stringify(compareList));
+
+  // Re-render the comparison list
+  renderComparisonList();
+}
+
+// Call renderComparisonList on page load to display the properties on the comparison page
+document.addEventListener('DOMContentLoaded', renderComparisonList);
+
+
+
+
+
+
+
+  </script>
+
+  
+
+
+
+    
+</body>
+</html>
